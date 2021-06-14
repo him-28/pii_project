@@ -77,7 +77,7 @@ def nlp():
                 
                 pdf.cell(200, 5, txt = data, ln = 1, align = 'L')
 
-        
+        print("checking")
         output_fname = os.path.basename(os.path.join(path+"/input", file)).split('.')[0] + ".pdf"
         output_path = os.path.join(path+"/output/") + output_fname
         
