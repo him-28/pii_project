@@ -42,4 +42,4 @@ jobs:
         
     - name: Run pytest to verify PII are deleted
       run: |
-        pytest -rfs test_example_*
+        pytest -s -v
