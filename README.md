@@ -9,5 +9,5 @@ Created a python based utility that removes Personally Identifiable Information(
 Command:
 
  ```bash
- docker run -v ~/output:~/PII_project/output -it --name pii_project --rm him-28/pii_project
+ docker run -v ~/output:~/pii_project/output -it --name pii_project --rm him-28/pii_project
  ```
