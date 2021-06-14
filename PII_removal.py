@@ -80,5 +80,6 @@ def nlp():
         print("checking")
         output_fname = os.path.basename(os.path.join(path+"/input", file)).split('.')[0] + ".pdf"
         output_path = os.path.join(path+"/output/") + output_fname
+        print('writing pdf.... {0}'.format(output_path))
         
         pdf.output(output_path, 'F')
