@@ -1,0 +1,32 @@
+version: '2.4'
+
+networks:
+  default:
+    external:
+      name: PII_removal
+
+services:
+
+  base:
+    image: python:3.7.4-buster
+    command: bash -c "apt install build-essential libpoppler-cpp-dev pkg-config python3-dev && useradd --create-home --shell /bin/bash $USER && chown -R $USER:$USER ~/PII_project"
+    volumes:
+      - .:~/PII_project
+      - PII_vol:/usr/local/lib/python3.7/site-packages
+    working_dir: ~/PII_project
+    networks:
+      - default
+
+  upgrade-pip:
+    extends:
+      service: base
+    command: pip install --upgrade pip
+
+  install:
+    extends:
+      service: base
+    command: pip3 install -r requirements.txt
+
+volumes:
+  PII_vol:
+    external: true
