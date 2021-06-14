@@ -3,17 +3,17 @@ version: '2.4'
 networks:
   default:
     external:
-      name: PII_removal
+      name: pii_removal
 
 services:
 
   base:
     image: python:3.7.4-buster
-    command: bash -c "apt install build-essential libpoppler-cpp-dev pkg-config python3-dev && useradd --create-home --shell /bin/bash $USER && chown -R $USER:$USER ~/PII_project"
+    command: bash -c "apt install build-essential libpoppler-cpp-dev pkg-config python3-dev && useradd --create-home --shell /bin/bash himanshu && chown -R himanshu:himanshu /home/himanshu/pii_project"
     volumes:
-      - .:/home/$USER/PII_project
+      - .:/home/himanshu/pii_project
       - PII_vol:/usr/local/lib/python3.7/site-packages
-    working_dir: /home/$USER/PII_project
+    working_dir: /home/himanshu/pii_project
     networks:
       - default
 
