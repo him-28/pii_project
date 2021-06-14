@@ -6,7 +6,7 @@ build:
 
 exe:
 	mkdir -p ~/output
-	docker run -v ~/output:~/PII_project/output -it --name PII_project --rm him-28/PII_project
+	docker run -v ~/output:~/PII_project/output -it --name pii_project --rm him-28/PII_project
 
 tag:
 	docker tag PII_project:latest him-28/PII_project:latest
