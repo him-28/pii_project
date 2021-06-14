@@ -22,7 +22,7 @@ jobs:
         sudo apt-get install -y build-essential libpoppler-cpp-dev pkg-config python3-dev
         
     - name: Create output for pytest 
-      run: mkdir -p $PIIHOME/output     
+      run: mkdir -p ~/output     
       
     - name: Set up Python
       uses: actions/setup-python@v1
