@@ -1,7 +1,7 @@
 FROM python:3.7.4-buster as PII_project
 
 ENV PYTHONDONTWRITEBYTECODE=1
-ARG PIIHOME=~/PII_removal
+ARG PIIHOME=~/PII_project
 WORKDIR $PIIHOME
 
 RUN apt-get update \
@@ -20,5 +20,5 @@ RUN pip3 install -r requirements.txt
 
 COPY input/ input/
 
-VOLUME ["~/PII_removal/output"]
-ENTRYPOINT ["python3", "~/PII_removal/main.py"]
+VOLUME ["~/PII_project/output"]
+ENTRYPOINT ["python3", "~/PII_project/main.py"]
